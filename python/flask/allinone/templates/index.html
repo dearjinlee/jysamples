@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+{% block title %}Welcome{% endblock %}
+{% block contents %}
+
+<h1>Remote Information</h1>
+<ul>
+    <li>Address: {{ remote_addr }}</li>
+    <li>User: {{ remote_user }}</li>
+</ul>
+
+<h1>List</h1>
+<ul>
+    <li><a href="/list">list</a></li>
+    <li><a href="/person">person</a></li>
+    <li><a href="/person?format=json">person (json)</a></li>
+    <li><a href="/table">table</a></li>
+    <li><a href="/redirection">redirection</a></li>
+    <li><a href="/exception">exception</a> - no error</li>
+    <li><a href="/exception?raise=yes">exception</a> - error</li>
+    <li><a href="/cookies">cookies</a></li>
+    <li><a href="/g">g</a></li>
+    <li><a href="/var">var</a></li>
+    <li><a href="/var?x=val">var with value</a></li>
+    <li><a href="/post">post</a></li>
+    <li><a href="/error">500 error</a></li>
+</ul>
+<h1>Blueprints</h1>
+<ul>
+    <li><a href="/pages">pages</a></li>
+    <li><a href="/file">file</a></li>
+</ul>
+<h1>Blueprints</h1>
+<p>NOTE: mypage's url_prefix is None</p>
+<ul>
+    {% for name, bp in bps.items() %}
+    <li><a href="{{ bp.url_prefix }}">{{ bp.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

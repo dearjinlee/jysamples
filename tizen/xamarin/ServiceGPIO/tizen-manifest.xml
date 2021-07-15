@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="6.0" package="org.example.servicegpio" version="1.0.0">
+    <profile name="iot-headed"/>
+    <service-application appid="org.example.servicegpio" exec="servicegpio" multiple="false" nodisplay="true" taskmanage="false" type="capp">
+        <label>servicegpio</label>
+        <icon>servicegpio.png</icon>
+    </service-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/peripheralio</privilege>
+    </privileges>
+</manifest>
